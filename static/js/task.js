@@ -34,6 +34,7 @@ var Instructions = function() {
     // Display a page of instructions, based on the current
     // STATE.index
 
+
     this.show = function() {
         debug("show block instructions");
 
@@ -58,6 +59,10 @@ var Instructions = function() {
 
     // Handler for when the "next" button is pressed
     this.record_response = function() {
+
+      $('select').each( function(i, val) {
+        psiTurk.recordUnstructuredData(this.id, this.value);
+      });
 
         // Calculate the response time
         var rt = (new Date().getTime()) - this.timestamp;
@@ -166,7 +171,7 @@ var Trial = function() {
             show_children(entryDiv);
 
             show_prompt(that.trialinfo);
-            
+
             // Listening for responses
             that.firstListen = true;
             that.listening = true;
@@ -197,19 +202,19 @@ var Trial = function() {
     this.phases[TRIAL.promptoff] = function(that) {
 
         if (STATE.index >= (that.trials.length - 1)){
-          replace_prompt("Good work! This part of the experiment is over, you can take a short break before you move on. Press the SPACEBAR to continue.");
+          replace_prompt("Good work! The experiment is over, you can take a short break before you move on to the questionnaire. Press the SPACEBAR to continue.");
         }
         else {
-          replace_prompt("Good work! Press the SPACEBAR move on to the next prompt in this block. Be ready to type right away!");
+          replace_prompt("Good work! Press the SPACEBAR move on to the next prompt. Be ready to type right away!");
         }
-        
+
         $("#resp-entry").hide(); // hide the response entry div
         that.listening = false;
         that.firstListen = false;
         setTimeout(function () {
-            that.lastlisten = true; // activate the keyup function after 800 ms to avoid carryover
-        }, 800);
-        
+            that.lastlisten = true; // activate the keyup function after 1000 ms to avoid carryover
+        }, 1000);
+
         document.onkeyup = function () { // this is a simple way to use a keyup to advance (keyup is best here)
             if(that.lastlisten){
                 $("#resp-input").val(""); // clear input field so it doesn't carry over

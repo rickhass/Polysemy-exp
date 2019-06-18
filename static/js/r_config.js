@@ -5,9 +5,8 @@
 // object to hold experiment phases
 var EXPERIMENT = Object.freeze({
     practice: 0,
-    hifan: 1,
-    lowfan: 2,
-    length: 3
+    test: 1,
+    length: 2
 });
 
 // object to hold trial order
@@ -31,7 +30,8 @@ var CIGconfig = function(condition, counterbalance, timelimit) {
 
   this.instructions = [
     "instructions/instruct-1.html",
-    "instructions/instruct-2.html"
+    "instructions/instruct-2.html",
+    "instructions/instruct-3.html"
   ];
 
   this.pages = [
@@ -42,30 +42,16 @@ var CIGconfig = function(condition, counterbalance, timelimit) {
 
   this.block = new Object();
   this.block[EXPERIMENT.practice] = ["instruct-practice"];
-  this.block[EXPERIMENT.hifan] = ["instruct-ou1"];
-  // both ou instructions are the same, but one has language that makes it read well for a
-  // second task
-  this.block[EXPERIMENT.lowfan] = ["instruct-ou2"];
+  this.block[EXPERIMENT.test] = ["instruct-test"];
 
   this.promptlist = new Object();
   this.promptlist[EXPERIMENT.practice] = ["Name as many COLORS as you can"];
-  this.promptlist[EXPERIMENT.hifan] = _.shuffle([
-        "Please list all of the creative, unusual uses for SOAP you can think of.",
-        "Please list all of the creative, unusual uses for a ROPE you can think of.",
-        "Please list all of the creative, unusual uses for a STICK you can think of.",
-        "Please list all of the creative, unusual uses for a MARBLE you can think of.",
-        "Please list all of the creative, unusual uses for a BALLOON you can think of."
+  this.promptlist[EXPERIMENT.test] = _.shuffle([
+        "Word1","Word2","Word3","Word4","Word5","Word6","Word7","Word8"
       ]);
-  this.promptlist[EXPERIMENT.lowfan] = _.shuffle([
-      "Please list all of the creative, unusual uses for a CLOCK you can think of.",
-      "Please list all of the creative, unusual uses for a FORK you can think of.",
-      "Please list all of the creative, unusual uses for a LAMP you can think of.",
-      "Please list all of the creative, unusual uses for a LENS you can think of.",
-      "Please list all of the creative, unusual uses for a PEN you can think of."
-    ]);
 
   this.timelimit = timelimit; // in milliseconds
 
-  this.rest = 5000; // break time between trials in milliseconds, depricated
+  //this.rest = 5000; // break time between trials in milliseconds, depricated
 
 };

@@ -1,30 +1,57 @@
 <div class="container-instructions">
-  <h1>Instructions (continued)</h1>
-  <div class="inside-instruct">
-    <p>All of the prompts in this experiment will be objects. In each case, you'll be asked to think of as many
-      uses for each of these objects as you can, and to type them in, one by one, in a response field.
-    </p>
-
-      <p>No matter what, it is important that you type in <b> every idea that pops into you your head <i>as
-        soon as it does</i></b>. It is not necessary that your idea "make sense", but try and describe your idea exactly as it came to you.
-      </p>
-      <p>When you are ready to begin, press "Begin Practice." You will then be given further instructions about a practice trial.</p>
-  </div>
-
-  <div class="instructionsnav">
-      <div class="row">
-          <div class="col-xs-2">
-              <button type="button" id="prev" value="prev" class="btn btn-primary btn-lg previous">
-              <span class="glyphicon glyphicon-arrow-left"></span> Previous
-              </button>
-          </div>
-          <div class="col-xs-8">
-          </div>
-          <div class="col-xs-2">
-              <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue">
-              Begin Practice <span class="glyphicon glyphicon-arrow-right"></span>
-              </button>
-          </div>
+  <h2>Please answer the following questions to proceed:</h2>
+  <!-- beginning of a question -->
+  <div class="row question">
+      <div class="col-md-8">
+          What is this experiment about?
+      </div>
+      <div class="col-md-4">
+          <select id="About" name="About">
+            <option value="" selected>--Make a Selection--</option>
+              <option value="A">Creativity</option>
+              <option value="B">Marbles</option>
+              <option value="C">Jelly beans</option>
+          </select>
       </div>
   </div>
+  <!-- end of a question -->
+
+  <!-- beginning of a question -->
+  <div class="row question">
+      <div class="col-md-8">
+          How many prompts will there be?
+      </div>
+      <div class="col-md-4">
+          <select id="promptcount" name="promptcount">
+            <option value="" selected>--Make a Selection--</option>
+            <option value="9">9</option>
+            <option value="8">8</option>
+            <option value="7">7</option>
+            <option value="6">6</option>
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+
+          </select>
+      </div>
+  </div>
+  <!-- end of a question -->
+ <div class="instructionsnav">
+     <div class="row">
+         <div class="col-xs-2">
+             <button type="button" id="prev" value="prev" class="btn btn-primary btn-lg previous">
+             <span class="glyphicon glyphicon-arrow-left"></span> Previous
+             </button>
+         </div>
+         <div class="col-xs-8">
+         </div>
+         <div class="col-xs-2">
+             <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue">
+             Begin Practice <span class="glyphicon glyphicon-arrow-right"></span>
+             </button>
+         </div>
+     </div>
+ </div>
 </div>
