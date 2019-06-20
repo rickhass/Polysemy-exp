@@ -1,37 +1,161 @@
 <!-- this is modeled after Jess Hamrick's experiment. Each one of these Divs (except the last)
 contains instructions for each phase of the task, and are called to show by the Instructions() function
 at the very bottom is the HTML that is operated on for the actual tasks -->
+<div class="inside-instruct" id="instruct-practice-1">
+    <h1>Instructions</h1>
+    <p>In this experiment, your task will be to read a word printed on the screen and respond by typing aditional words.
+      You will do so with your computer keyboard. It is important that you are sitting in your normal typing position
+      and that you type as you normally would as if you were taking notes or writing in a Word document.</p>
 
-<div class="slide" id="instruct-practice">
-  <h1>Task Instructions</h1>
-  <div class="blue">
-	   <p>This is a practice trial. It will last 30 seconds. It is designed to help you get used to the procedure
-       for the experiment.</p>
-    <p>When you press "Start", the name of a specific category will appear on the screen.</p>
-    <p>As soon as you think of an example of that category, type it into the field and press ENTER.</p>
-	   <p>It is important to keep thinking of responses and to type them in for the entire time</p>
-	    <p>Please type them in <b> one at a time</b> as they come to you, and <b>press ENTER after typing each one.</b></p>
-	     <p>Pressing ENTER will clear the response field so that you can continue to type new responses.</p>
-        <p>When the 30 seconds are over, you will recieve instructions about the first real experimental trial.</p>
+    <p>Take the opportunity to ready yourself now for typing. You will practice typing before any
+      of the real tasks start.</p>
+
+      <p>There will be 9 trials totalwith each trial lasting 2 minutes except the first trial,
+        which is a practice trial and will last 30 seconds.
+        You will be allowed to take a break between every trial, but remember,
+        you have 60 minutes to complete this HIT.
+        The tasks themselves will take no more than 18 minutes, including the short questionnaire at the end. </p>
+
+        <p> Here is the flow of the experiment:</p>
+
+    <ol>
+      <li>1 practice trial</li>
+      <li>8 experiment trials</li>
+      <li>1 short demographic questionnaire</li>
+    </ol>
+
+    <div class="instructionsnav">
+        <div class="row">
+            <div class="col-xs-2">
+            	<!-- no previous button on first screen -->
+            </div>
+            <div class="col-xs-8">
+            </div>
+            <div class="col-xs-2">
+                <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue">
+                Next <span class="glyphicon glyphicon-arrow-right"></span>
+                </button>
+            </div>
+        </div>
     </div>
+  </div>
 
-      <div class="continue">
-        <button type="button" class="next">Start</button>
+<!-- page 2 -->
+<div class="inside-instruct" id="instruct-practice-2">
+      <h2>Please answer the following questions to proceed:</h2>
+      <!-- beginning of a question -->
+      <div class="row question">
+          <div class="col-md-8">
+              What is this experiment about?
+          </div>
+          <div class="col-md-4">
+              <select id="About" name="About">
+                <option value="" selected>--Make a Selection--</option>
+                  <option value="A">Creativity</option>
+                  <option value="B">Marbles</option>
+                  <option value="C">Jelly beans</option>
+              </select>
+          </div>
       </div>
-    </div>
+      <!-- end of a question -->
 
-<div class="slide" id="instruct-test">
+      <!-- beginning of a question -->
+      <div class="row question">
+          <div class="col-md-8">
+              How many prompts will there be?
+          </div>
+          <div class="col-md-4">
+              <select id="promptcount" name="promptcount">
+                <option value="" selected>--Make a Selection--</option>
+                <option value="9">9</option>
+                <option value="8">8</option>
+                <option value="7">7</option>
+                <option value="6">6</option>
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+
+              </select>
+          </div>
+      </div>
+      <!-- end of a question -->
+     <div class="instructionsnav">
+         <div class="row">
+             <div class="col-xs-2">
+                 <!-- no back button at all -->
+             </div>
+             <div class="col-xs-8">
+             </div>
+             <div class="col-xs-2">
+                 <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue">
+                 Next <span class="glyphicon glyphicon-arrow-right"></span>
+                 </button>
+             </div>
+         </div>
+     </div>
+</div>
+
+ <!-- page 3 -->
+<div class="inside-instruct" id="instruct-practice-3">
+   <p>Just so you don't forget, we'll go through the instructions one more time.</p>
+
+     <p>There will be 9 trials totalwith each trial lasting 2 minutes except the first trial,
+       which is a practice trial and will last 30 seconds.
+       You will be allowed to take a break between every trial, but remember,
+       you have 60 minutes to complete this HIT.
+       The tasks themselves will take no more than 18 minutes, including the short questionnaire at the end. </p>
+
+       <p> Here is the flow of the experiment:</p>
+
+   <ol>
+     <li>1 practice trial</li>
+     <li>8 experiment trials</li>
+     <li>1 short demographic questionnaire</li>
+   </ol>
+
+   <p>If you're sure you're ready to continue, press the NEXT button below to start the experiment</p>
+  <div class="instructionsnav">
+    <div class="row">
+        <div class="col-xs-2">
+            <!-- no back button at all -->
+        </div>
+        <div class="col-xs-8">
+        </div>
+        <div class="col-xs-2">
+            <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue">
+            Begin Practice <span class="glyphicon glyphicon-arrow-right"></span>
+            </button>
+        </div>
+    </div>
+  </div>
+</div>
+<!--end page 3 -->
+
+<div class="inside-instruct" id="instruct-test">
       <h1>Task Instructions</h1>
-      <div class="blue">
-        <p>This is the first block of real trials. There will be FIVE 3-minute trials before your next break (~15 minutes)</p>
+
+        <p>This is the first block of real trials. There will be 8 2-minute trials before your next break (~15 minutes)</p>
         <p>We want you to come up with as many original and creative uses for objects as you can. The goal is to come up with <b>creative ideas</b>, which are ideas that strike people as clever, unusual, interesting, uncommon, humorous, innovative, or different.</p>
         <p>You will do this for five different objects, with 3 minutes on each one.</p>
         <p>Remember to press ENTER after EACH response</p>
         <p>Press <b>START</b> below to begin</p>
+
+    <div class="instructionsnav">
+        <div class="row">
+            <div class="col-xs-2">
+              <!-- no back button at all -->
+            </div>
+            <div class="col-xs-8">
+            </div>
+            <div class="col-xs-2">
+                <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue">
+                Begin Experiment <span class="glyphicon glyphicon-arrow-right"></span>
+                </button>
+            </div>
+        </div>
     </div>
-      <div class="continue">
-        <button type="button" class="next">Start</button>
-      </div>
     </div>
 
 

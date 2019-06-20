@@ -9,11 +9,11 @@ var $c = new CIGconfig(condition, counterbalance, 5000); // 180000ms = 3 min
 var psiTurk = new PsiTurk(uniqueId, adServerLoc);
 // load pages
 
-var pages = $c.instructions.concat($c.pages);
+var pages = $c.pages;
 
 psiTurk.preloadPages(pages);
-
-var instructionPages = $c.instructions;
+//
+// var instructionPages = $c.instructions;
 
 // objects to keep track of views and state
 var CURRENTVIEW;
@@ -31,16 +31,18 @@ var Instructions = function() {
     // Time when a page of instructions is presented
     this.timestamp;
 
+
     // Display a page of instructions, based on the current
     // STATE.index
-
 
     this.show = function() {
         debug("show block instructions");
 
+
         // Load the next page of instructions
-        $(".slide").hide();
-        var slide = $("#" + this.pages);
+        $(".inside-instruct").hide(); // hide the instructions
+        $(".slide").hide(); // hide the unused trial
+        var slide = $("#" + this.pages[STATE.index]);
         slide.fadeIn($c.fade);
 
         // Update the URL hash
@@ -49,7 +51,7 @@ var Instructions = function() {
         // Bind a handler to the "next" button. We have to wrap it in
         // an anonymous function to preserve the scope.
         var that = this;
-        slide.find('.next').click(function () {
+        slide.find('#next').click(function () {
             that.record_response();
         });
 
@@ -75,12 +77,17 @@ var Instructions = function() {
         data.update({response: "", response_time: rt});
         psiTurk.recordTrialData(data);
         debug(data);
-
         this.finish();
     };
 
     // Clean up the instructions phase and move on to the test phase
     this.finish = function() {
+        if (STATE.index <= this.pages.length) {
+          STATE.set_index(STATE.index + 1);
+          this.show();
+        }
+        else {
+
         debug("Done with block instructions")
 
 
@@ -91,8 +98,8 @@ var Instructions = function() {
         STATE.set_index();
         STATE.set_trial_phase();
         CURRENTVIEW = new Trial();
+      }
     };
-
     // Display the block instructions
     this.show();
 };
@@ -128,6 +135,7 @@ var Trial = function() {
     // of a new trial, or if the page is reloaded between trials.
     this.init_trial = function () {
         debug("Initializing trial " + STATE.index);
+        $(".inside-instruct").hide();
         $(".phase").hide(); //hide all divs
 
         // If there are no more trials left, then we are at the end of
@@ -294,7 +302,7 @@ var Trial = function() {
     };
 
     // Load the trial html page
-    $(".slide").hide();
+    $(".conainter-exp").hide();
     // Show the slide
     $("#trial").fadeIn($c.fade);
 
@@ -375,9 +383,6 @@ var Questionnaire = function() {
  * Run Task
  ******************/
 $(document).ready(function() {
-     psiTurk.doInstructions(
-     	instructionPages, // a list of pages you want to display in sequence
-     	function() {
         // Load the HTML for the trials
         // Record various unstructured data
         psiTurk.showPage("trial.html");
@@ -391,5 +396,4 @@ $(document).ready(function() {
         } else {
             CURRENTVIEW = new Trial(); // this catches if they closed the window
         }
-      });
- });
+});

@@ -28,11 +28,11 @@ var CIGconfig = function(condition, counterbalance, timelimit) {
 
   this.debug = true; // set to false for actual run
 
-  this.instructions = [
-    "instructions/instruct-1.html",
-    "instructions/instruct-2.html",
-    "instructions/instruct-3.html"
-  ];
+  // this.instructions = [
+  //   "instructions/instruct-1.html",
+  //   "instructions/instruct-2.html",
+  //   "instructions/instruct-3.html"
+  // ];
 
   this.pages = [
         "trial.html",
@@ -41,7 +41,7 @@ var CIGconfig = function(condition, counterbalance, timelimit) {
       ];
 
   this.block = new Object();
-  this.block[EXPERIMENT.practice] = ["instruct-practice"];
+  this.block[EXPERIMENT.practice] = ["instruct-practice-1","instruct-practice-2","instruct-practice-3"];
   this.block[EXPERIMENT.test] = ["instruct-test"];
 
   this.promptlist = new Object();
