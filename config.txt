@@ -15,7 +15,7 @@ allow_repeats = false
 
 [Database Parameters]
 database_url = sqlite:///testdata.db
-table_name = cig_fan_data
+table_name = cig_polysemy_data
 
 [Server Parameters]
 host = 0.0.0.0

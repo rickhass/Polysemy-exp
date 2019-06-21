@@ -35,19 +35,16 @@ h3 {
 div.slide{
     width: 800px;
     position: relative;
-    padding: 1% 2% 1% 2%;
     margin: 0 auto;
-    display: block;
 }
 
 div.spacer {
   width:650px;
-  height: 50px;
+  height: 30px;
 }
 
-div.blue {
-    background-color: #b3f0ff;
-    font-size: 18px;
+div.trial-2 {
+    font-size: 20px;
     width: auto;
     padding: 5px;
     border: 1px solid #b3f0ff;
@@ -67,6 +64,8 @@ div.continue {
   margin-top: 0;
   width: 800px;
   font-size: 100%;
+  position: relative;
+  padding: 1% 2% 1% 2%;
 }
 
 div.container-instructions, div.instructionsnav {
@@ -74,10 +73,14 @@ div.container-instructions, div.instructionsnav {
   margin-top: 0;
   width: 800px;
   font-size: 100%;
+  position: relative;
+  padding: 1% 2% 1% 2%;
 }
 
 .inside-instruct {
   background-color: inherit;
+  position: relative;
+  padding: 1% 2% 1% 2%;
 }
 
 #container-prompt{
@@ -141,7 +144,6 @@ input[type="text"] {
   padding: 70px 0;
   text-align: center;
   font-size: 30px;
-  font-family: sans-serif;
   position: relative;
 }
 

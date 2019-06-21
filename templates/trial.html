@@ -2,7 +2,7 @@
 contains instructions for each phase of the task, and are called to show by the Instructions() function
 at the very bottom is the HTML that is operated on for the actual tasks -->
 <div class="inside-instruct" id="instruct-practice-1">
-    <h1>Instructions</h1>
+    <h1>General Instructions</h1>
     <p>In this experiment, your task will be to read a word printed on the screen and respond by typing aditional words.
       You will do so with your computer keyboard. It is important that you are sitting in your normal typing position
       and that you type as you normally would as if you were taking notes or writing in a Word document.</p>
@@ -99,12 +99,13 @@ at the very bottom is the HTML that is operated on for the actual tasks -->
 
  <!-- page 3 -->
 <div class="inside-instruct" id="instruct-practice-3">
+  <h2>Get ready for the Practice Run</h2>
    <p>Just so you don't forget, we'll go through the instructions one more time.</p>
 
-     <p>There will be 9 trials totalwith each trial lasting 2 minutes except the first trial,
+     <p>There will be 9 trials total, with each trial lasting 2 minutes except the first trial,
        which is a practice trial and will last 30 seconds.
        You will be allowed to take a break between every trial, but remember,
-       you have 60 minutes to complete this HIT.
+       you have 40 minutes to complete this HIT.
        The tasks themselves will take no more than 18 minutes, including the short questionnaire at the end. </p>
 
        <p> Here is the flow of the experiment:</p>
@@ -115,7 +116,7 @@ at the very bottom is the HTML that is operated on for the actual tasks -->
      <li>1 short demographic questionnaire</li>
    </ol>
 
-   <p>If you're sure you're ready to continue, press the NEXT button below to start the experiment</p>
+   <p>If you're sure you're ready to start the <b>practice trial</b>, press the NEXT button.</p>
   <div class="instructionsnav">
     <div class="row">
         <div class="col-xs-2">
@@ -134,13 +135,18 @@ at the very bottom is the HTML that is operated on for the actual tasks -->
 <!--end page 3 -->
 
 <div class="inside-instruct" id="instruct-test">
-      <h1>Task Instructions</h1>
+      <h2>Task Instructions</h2>
 
-        <p>This is the first block of real trials. There will be 8 2-minute trials before your next break (~15 minutes)</p>
-        <p>We want you to come up with as many original and creative uses for objects as you can. The goal is to come up with <b>creative ideas</b>, which are ideas that strike people as clever, unusual, interesting, uncommon, humorous, innovative, or different.</p>
-        <p>You will do this for five different objects, with 3 minutes on each one.</p>
-        <p>Remember to press ENTER after EACH response</p>
-        <p>Press <b>START</b> below to begin</p>
+        <p>Great job practicing. The real experimental trials start now!</p>
+        <p>There will be Eight 2-minute experimental trials (~16 minutes). You can take short breaks in between each of the trials,
+        but make sure you don't take too long a break so that you can finish in time.</p>
+        <h3>Your Task:</h3>
+        <p>A word will appear on the screen, and your task is to type other words that are creative, related to that word.</p>
+        <p><b>It is very important that you only type SINGLE WORDS</b>, that is, DO NOT type sentences or phrases.</p>
+        <p>Each word will appear on the screen for 2 minutes. It is important to try and think of responses the whole time, though we do want
+          you to think of creative responses. Just try to keep thinking for the whole 2 minutes.</p>
+        <p>Remember to type your ideas <b> as soon as you think of them</b>. Then, press ENTER after EACH response</p>
+        <p>When you are read, press <b>START</b> below to begin the first real trial.</p>
 
     <div class="instructionsnav">
         <div class="row">
@@ -162,15 +168,12 @@ at the very bottom is the HTML that is operated on for the actual tasks -->
 <!-- this is the holder for the actual response phase-->
 <div class="slide" id="trial">
   <!-- prompt box -->
-  <div id="entry" class="blue">
-    <div id="prompt-show" class="phase">
-      <div class="spacer"></div>
-    </div>
+  <div id="entry" class="trial-2">
+    <div id="prompt-show" class="phase"></div>
     <!-- response entry field -->
     <div id="resp-entry" class="phase">
-        <div class="spacer"></div>
         <label for="resp-input">Type Each Response Here:<br>Press ENTER after EACH response</label>
-          <input id="resp-input" type="text">
-        </div>
-      </div>
+        <input id="resp-input" type="text">
+    </div>
+  </div>
 </div>

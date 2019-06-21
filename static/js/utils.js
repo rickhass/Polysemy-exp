@@ -158,8 +158,9 @@ function show_children(container) { // shows all the children of the div for eac
 
 function show_prompt(prompt){ // shows the prompt in the correct location
   var show_me = document.getElementById('prompt-show');
-  var p = document.createTextNode(prompt);
-  show_me.appendChild(p);
+  //var p = document.createTextNode(prompt);
+  //show_me.appendChild(p);
+  show_me.textContent = prompt;
 };
 
 function hide_children(container) { // shows all the children of the div for each sub page

@@ -62,9 +62,7 @@ var Instructions = function() {
     // Handler for when the "next" button is pressed
     this.record_response = function() {
 
-      $('select').each( function(i, val) {
-        psiTurk.recordUnstructuredData(this.id, this.value);
-      });
+
 
         // Calculate the response time
         var rt = (new Date().getTime()) - this.timestamp;
@@ -77,20 +75,22 @@ var Instructions = function() {
         data.update({response: "", response_time: rt});
         psiTurk.recordTrialData(data);
         debug(data);
+
+        $('select').each( function(i, val) {
+          psiTurk.recordUnstructuredData(this.id, this.value);
+        });
+
         this.finish();
     };
 
     // Clean up the instructions phase and move on to the test phase
     this.finish = function() {
-        if (STATE.index <= this.pages.length) {
+        if (STATE.index < (this.pages.length - 1)) {
           STATE.set_index(STATE.index + 1);
           this.show();
-        }
-        else {
+        } else {
 
         debug("Done with block instructions")
-
-
         //psiTurk.finishInstructions();
 
         // Reset the state object for the test phase
@@ -210,7 +210,7 @@ var Trial = function() {
     this.phases[TRIAL.promptoff] = function(that) {
 
         if (STATE.index >= (that.trials.length - 1)){
-          replace_prompt("Good work! The experiment is over, you can take a short break before you move on to the questionnaire. Press the SPACEBAR to continue.");
+          replace_prompt("Good work! This part is over. Press the SPACEBAR to continue.");
         }
         else {
           replace_prompt("Good work! Press the SPACEBAR move on to the next prompt. Be ready to type right away!");
