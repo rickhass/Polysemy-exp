@@ -47,7 +47,7 @@ var CIGconfig = function(condition, counterbalance, timelimit) {
   this.promptlist = new Object();
   this.promptlist[EXPERIMENT.practice] = ["Name as many COLORS as you can"];
   this.promptlist[EXPERIMENT.test] = _.shuffle([
-        "Word1","Word2","Word3","Word4","Word5","Word6","Word7","Word8"
+        "CROSS","GAP","DIRECT","PRODUCE","GUITAR","CLONE","STITCH","ALBUM"
       ]);
 
   this.timelimit = timelimit; // in milliseconds

@@ -332,6 +332,7 @@ var Questionnaire = function() {
 		$('textarea').each( function(i, val) {
 			psiTurk.recordUnstructuredData(this.id, this.value);
 		});
+
 		$('select').each( function(i, val) {
 			psiTurk.recordUnstructuredData(this.id, this.value);
 		});
